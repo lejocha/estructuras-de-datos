@@ -3,7 +3,7 @@ def calculate_average(numbers):
     for num in numbers:
         total += num
     average = total / len(numbers)
-    return avrage
+    return average
 
 if __name__ == "__main__":
     data = []

@@ -1,5 +1,5 @@
 # task_manager.py
-
+#Método_para abrir un archivo y escribir sobre él
 def add_task(task):
     with open("tasks.txt", "a") as file:
         file.write(task + "\n")

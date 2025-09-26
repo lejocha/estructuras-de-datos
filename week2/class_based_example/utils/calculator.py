@@ -4,4 +4,4 @@ class AverageCalculator:
         total = 0
         for n in numbers:
             total += n
-        return total / len(numbrs)  # Bug: misspelled variable
+        return total / len(numbers)  # Bug: misspelled variable
