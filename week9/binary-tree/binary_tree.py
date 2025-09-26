@@ -146,3 +146,35 @@ class BinaryTree:
             print(r.key)
             self._print_tree(p + s, r.left, True)
             self._print_tree(p + s, r.right, False)
+
+    def _search(self,k):
+
+        if self.root is None:
+            return None
+        cola = queue.Queue()
+        cola.put(self.root)
+        while not cola.empty():
+            tmp = cola.get()
+            if tmp.key == k:
+                return tmp
+            if tmp.left is not None:
+                cola.put(tmp.left)
+            if tmp.right is not None:
+                cola.put(tmp.right)
+        return None
+
+    def _recursive_search(self, r, k):
+        if r is None:
+            return None
+        if r.key == k:
+            return r
+
+        tmp = self._recursive_search(r.left, k)
+        if tmp is not None:
+            return tmp
+        else :
+            return self._recursive_search(r.right, k)
+arbolito = BinaryTree()
+arbolito.create_from_file("tree.txt")
+tmp1 = arbolito.iterative_search('A')
+tmp2 = arbolito._recursive_search('Z')
